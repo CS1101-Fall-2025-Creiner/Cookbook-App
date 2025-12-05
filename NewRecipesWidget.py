@@ -5,10 +5,13 @@ from PyQt6 import (
 )
 
 class NewRecipesWidget(qw.QWidget):
-	def __init__(self):
+	emit_new_recipe = qc.pyqtSignal(str, str)
+
+	def __init__(self, recipes):
 		super().__init__()
 
 		main_layout = qw.QVBoxLayout(self)
+		self.recipes = recipes
 
 		# create title widget
 		title_widget = qw.QWidget()
@@ -26,4 +29,11 @@ class NewRecipesWidget(qw.QWidget):
 		main_layout.addWidget(self.recipe_box)
 
 		save_button = qw.QPushButton("Save Recipe")
+		save_button.clicked.connect(self.record_recipe)
 		main_layout.addWidget(save_button)
+
+	def record_recipe(self):
+		name = self.title_entry.text()
+		desc = self.recipe_box.toPlainText()
+
+		self.emit_new_recipe.emit(name, desc)		

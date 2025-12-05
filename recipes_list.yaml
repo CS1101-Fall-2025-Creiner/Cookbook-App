@@ -1,0 +1,9 @@
+recipe1:
+  name: "First recipe"
+  desc: "Here is recipe 1"
+recipe2:
+  name: "Bagel Soup"
+  desc: "Leave a bagel in water for a while"
+recipe3:
+  name: "A third thing"
+  desc: "TBA"

@@ -1,0 +1,19 @@
+########
+names
+########
+recipe
+
+could be multiple lines
+########
+name 2
+########
+another description
+########
+there are better
+
+We'd have to make an algorithm which loops over these lines one by one and records the full name/full description as text
+
+better way: use standardized text storage standards
+
+ - json
+ - yaml
